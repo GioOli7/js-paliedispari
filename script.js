@@ -2,6 +2,32 @@
 //Chiedere all’utente di inserire una parola
 //Creare una funzione per capire se la parola inserita è palindroma
 
+var word = prompt('Inserisci una parola, ti dirò se è palindroma');
+if (isPalindroma(word)) {
+    console.log(`La parola ${word} è palidroma`);
+} else {
+    console.log(`la parola ${word} non è palindroma`);
+}
+
+////////FUNZIONE
+/**
+ * Verifica se la parola è palindroma
+ * @param {string} parola parola da verificare
+ * @returns true se è palindroma
+ */
+function isPalindroma (parola) {
+    var palindroma = '';
+    for (var i = parola.length - 1; i >= 0; i--) {
+        palindroma += parola[i]
+    }
+    // console.log(palindroma);
+    if (palindroma === parola) {
+        return true;
+    }
+    return false;
+}
+// avrei potuto inserire il risultato del log direttamente nella funzione, ma trovo più flessibile gestirlo
+// nel codice, ed avere un semplice true o false come risultato della funzione
 
 
 
