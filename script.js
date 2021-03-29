@@ -49,9 +49,9 @@ function isPalindroma (parola) {
 
 // chiedo all utente di scegliere tra pari e dispari
 do {
-    var PariDispariUser = prompt('Pari o dispari?\nDigita la parola corrispondente').toLowerCase().trim();
-} while (PariDispariUser != 'pari' && PariDispariUser != 'dispari');
-console.log(`L'utente ha scelto ${PariDispariUser}`);
+    var pariDispariUser = prompt('Pari o dispari?\nDigita la parola corrispondente').toLowerCase().trim();
+} while (pariDispariUser != 'pari' && pariDispariUser != 'dispari');
+console.log(`L'utente ha scelto ${pariDispariUser}`);
 
 // chiedo all utente di scegliere un numero da 1 a 5
 do{
@@ -68,7 +68,7 @@ var somma = sum(numUser, numCPU);
 console.log(`La somma dei due valori è ${somma}`);
 
 //stabilisco se la somma dei due numeri è pari o dispari, e stabilisco se l'utente ha vinto
-if (PariDispariUser === isEven(somma)) {
+if (pariDispariUser === isEven(somma)) {
     console.log(`La somma è ${isEven(somma)}, quindi l'utente ha vinto!`);
 } else {
     console.log(`La somma è ${isEven(somma)}, quindi l'utente ha perso!`);
