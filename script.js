@@ -18,7 +18,7 @@ if (isPalindroma(word)) {
  * @returns true se è palindroma
  */
 
-/*
+
 function isPalindroma (parola) {
     var palindroma = '';
     for (var i = parola.length - 1; i >= 0; i--) {
@@ -30,7 +30,7 @@ function isPalindroma (parola) {
     }
     return false;
 }
-*/
+
 
 // avrei potuto inserire il risultato del log direttamente nella funzione, ma trovo più flessibile gestirlo
 // nel codice, ed avere un semplice true o false come risultato della funzione
@@ -47,14 +47,27 @@ function isPalindroma (parola) {
 //Dichiariamo chi ha vinto.
 
 
-var PariDispariUser = prompt('Pari o dispari?\nDigita la parola corrispondente').toLowerCase().trim();
+// chiedo all utente di scegliere tra pari e dispari
+do {
+    var PariDispariUser = prompt('Pari o dispari?\nDigita la parola corrispondente').toLowerCase().trim();
+} while (PariDispariUser != 'pari' && PariDispariUser != 'dispari');
 console.log(`L'utente ha scelto ${PariDispariUser}`);
-var numUser = parseInt(prompt('Scegli un numero da 1 a 5'));
+
+// chiedo all utente di scegliere un numero da 1 a 5
+do{
+    var numUser = parseInt(prompt('Scegli un numero da 1 a 5'));
+} while (isNaN(numUser) || numUser < 1 || numUser > 5)
 console.log(`L'utente ha scelto il numero ${numUser}`);
+
+//genero un numero casuale da 1 a 5 per il computer
 var numCPU = randomCPU();
 console.log(`Il numero casuale per il computer è ${numCPU}`);
+
+// sommo il valore immesso dall utente con quello generato per il computer
 var somma = sum(numUser, numCPU);
 console.log(`La somma dei due valori è ${somma}`);
+
+//stabilisco se la somma dei due numeri è pari o dispari, e stabilisco se l'utente ha vinto
 if (PariDispariUser === isEven(somma)) {
     console.log(`La somma è ${isEven(somma)}, quindi l'utente ha vinto!`);
 } else {
@@ -94,3 +107,4 @@ function isEven(numero) {
     }
     return 'dispari';
 }
+
